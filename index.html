@@ -30,11 +30,55 @@
         $('.player_names h3:first-child').append(player_1);
         $('.player_names h3:nth-child(2)').append(player_2);
         
+        let current_width_p1;
+        let current_width_p2;
+
+        $('.player1').click(function () {
+
+          current_width_p1 = $('.player1').width();
+          current_width_p2 = $('.player2').width();
+
+          if (current_width_p1 == 0) {
+            $('h1').text(player_2 + ' Won!');
+          }
+          else if (current_width_p2 == 0) {
+            $('h1').text(player_1 + ' Won!');
+          }
+
+          else {
+            current_width_p1+=10;
+            current_width_p2-=10;
+                          
+            $('.player1').css('width', current_width_p1);
+            $('.player2').css('width', current_width_p2);
+          }
+        });
+
+        $('.player2').click(function () {
+
+          current_width_p1 = $('.player1').width();
+          current_width_p2 = $('.player2').width();
+
+          if (current_width_p1 == 0) {
+            $('h1').text(player_2 + ' Won!');
+          }
+          else if (current_width_p2 == 0) {
+            $('h1').text(player_1 + ' Won!');
+          }
+          else {
+            current_width_p2+=10;
+            current_width_p1-=10;
+      
+            $('.player2').css('width', current_width_p2);
+            $('.player1').css('width', current_width_p1);
+          }
+        });
+
         
         $(document).keydown(function (e) {
   
-          let current_width_p1 = $('.player1').width();
-          let current_width_p2 = $('.player2').width();
+          current_width_p1 = $('.player1').width();
+          current_width_p2 = $('.player2').width();
   
           if (current_width_p1 == 0) {
             $('h1').text(player_2 + ' Won!');
