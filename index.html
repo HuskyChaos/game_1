@@ -18,51 +18,57 @@
       if (player_2 == '') {
         player_2 = 'Player 2'
       }
-      
-      $('.player_names h3:first-child').append(player_1);
-      $('.player_names h3:nth-child(2)').append(player_2);
 
-      
-      $(document).keydown(function (e) {
+      if (player_1.toLowerCase() === player_2.toLowerCase()) {
+        alert("Choose Diffrent Names!");
+        location.reload();
+      }
 
-        let current_width_p1 = $('.player1').width();
-        let current_width_p2 = $('.player2').width();
+      else {
 
-        if (current_width_p1 == 0) {
-          $('h1').text(player_2 + ' Won!');
-        }
-        else if (current_width_p2 == 0) {
-          $('h1').text(player_1 + ' Won!');
-
-        }
-
-        else {
-
-          if (e.code == 'KeyD') {
+        $('.player_names h3:first-child').append(player_1);
+        $('.player_names h3:nth-child(2)').append(player_2);
   
-            current_width_p1+=10;
-            current_width_p2-=10;
-                      
-            $('.player1').css('width', current_width_p1);
-            $('.player2').css('width', current_width_p2);
+        
+        $(document).keydown(function (e) {
   
+          let current_width_p1 = $('.player1').width();
+          let current_width_p2 = $('.player2').width();
+  
+          if (current_width_p1 == 0) {
+            $('h1').text(player_2 + ' Won!');
+          }
+          else if (current_width_p2 == 0) {
+            $('h1').text(player_1 + ' Won!');
           }
   
-          else if (e.code == 'KeyH') {
+          else {
   
-            current_width_p2+=10;
-            current_width_p1-=10;
-  
-            $('.player2').css('width', current_width_p2);
-            $('.player1').css('width', current_width_p1);
-  
+            if (e.code == 'KeyD') {
+    
+              current_width_p1+=10;
+              current_width_p2-=10;
+                        
+              $('.player1').css('width', current_width_p1);
+              $('.player2').css('width', current_width_p2);
+    
+            }
+    
+            else if (e.code == 'KeyH') {
+    
+              current_width_p2+=10;
+              current_width_p1-=10;
+    
+              $('.player2').css('width', current_width_p2);
+              $('.player1').css('width', current_width_p1);
+    
+            }
           }
+        });
+      }
 
-        }
 
-
-
-      });
+      
 
 
 
