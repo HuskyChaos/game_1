@@ -6,124 +6,131 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script>
+
+    function checkResize() {
+
+      if ( $(document).innerWidth() < $(document).innerHeight() ) {
+        alert("Rotate Your Mobile Screen To Play This Game!");
+        location.reload();
+      }
+      
+    }
+    
     $(document).ready(function () {
 
-      $(document).resize(function () {
 
-        if ( $(document).innerWidth() < $(document).innerHeight() ) {
-          alert("Rotate Your Mobile Screen To Play This Game!");
+      if ( $(document).innerWidth() < $(document).innerHeight() ) {
+        alert("Rotate Your Mobile Screen To Play This Game!");
+        location.reload();
+      }
+
+      else {
+        
+        let player_1 = prompt('Name Of Player 1:');
+        let player_2 = prompt('Name Of Player 2:');
+  
+        if (player_1 == '') {
+          player_1 = 'Player 1'
+        }
+  
+        if (player_2 == '') {
+          player_2 = 'Player 2'
+        }
+  
+        if (player_1.toLowerCase() === player_2.toLowerCase()) {
+          alert("Choose Diffrent Names!");
           location.reload();
         }
   
         else {
+  
           
-          let player_1 = prompt('Name Of Player 1:');
-          let player_2 = prompt('Name Of Player 2:');
+          $('.player_names h3:first-child').append(player_1);
+          $('.player_names h3:nth-child(2)').append(player_2);
+          
+          let current_width_p1;
+          let current_width_p2;
+  
+          $('.player1').click(function () {
+  
+            current_width_p1 = $('.player1').width();
+            current_width_p2 = $('.player2').width();
+  
+            if (current_width_p1 <= 2) {
+              $('h1').text(player_2 + ' Won!');
+            }
+            else if (current_width_p2 <= 2) {
+              $('h1').text(player_1 + ' Won!');
+            }
+  
+            else {
+              current_width_p1+=10;
+              current_width_p2-=10;
+                            
+              $('.player1').css('width', current_width_p1);
+              $('.player2').css('width', current_width_p2);
+            }
+          });
+  
+          $('.player2').click(function () {
+  
+            current_width_p1 = $('.player1').width();
+            current_width_p2 = $('.player2').width();
+  
+            if (current_width_p1 <= 2) {
+              $('h1').text(player_2 + ' Won!');
+            }
+            else if (current_width_p2 <= 2) {
+              $('h1').text(player_1 + ' Won!');
+            }
+            else {
+              current_width_p2+=10;
+              current_width_p1-=10;
+        
+              $('.player2').css('width', current_width_p2);
+              $('.player1').css('width', current_width_p1);
+            }
+          });
+  
+          
+          $(document).keydown(function (e) {
     
-          if (player_1 == '') {
-            player_1 = 'Player 1'
-          }
+            current_width_p1 = $('.player1').width();
+            current_width_p2 = $('.player2').width();
     
-          if (player_2 == '') {
-            player_2 = 'Player 2'
-          }
+            if (current_width_p1 <= 2) {
+              $('h1').text(player_2 + ' Won!');
+            }
+            else if (current_width_p2 <= 2) {
+              $('h1').text(player_1 + ' Won!');
+            }
     
-          if (player_1.toLowerCase() === player_2.toLowerCase()) {
-            alert("Choose Diffrent Names!");
-            location.reload();
-          }
+            else {
     
-          else {
-    
-            
-            $('.player_names h3:first-child').append(player_1);
-            $('.player_names h3:nth-child(2)').append(player_2);
-            
-            let current_width_p1;
-            let current_width_p2;
-    
-            $('.player1').click(function () {
-    
-              current_width_p1 = $('.player1').width();
-              current_width_p2 = $('.player2').width();
-    
-              if (current_width_p1 <= 2) {
-                $('h1').text(player_2 + ' Won!');
-              }
-              else if (current_width_p2 <= 2) {
-                $('h1').text(player_1 + ' Won!');
-              }
-    
-              else {
+              if (e.code == 'KeyD') {
+      
                 current_width_p1+=10;
                 current_width_p2-=10;
-                              
+                          
                 $('.player1').css('width', current_width_p1);
                 $('.player2').css('width', current_width_p2);
+      
               }
-            });
-    
-            $('.player2').click(function () {
-    
-              current_width_p1 = $('.player1').width();
-              current_width_p2 = $('.player2').width();
-    
-              if (current_width_p1 <= 2) {
-                $('h1').text(player_2 + ' Won!');
-              }
-              else if (current_width_p2 <= 2) {
-                $('h1').text(player_1 + ' Won!');
-              }
-              else {
+      
+              else if (e.code == 'KeyH') {
+      
                 current_width_p2+=10;
                 current_width_p1-=10;
-          
+      
                 $('.player2').css('width', current_width_p2);
                 $('.player1').css('width', current_width_p1);
-              }
-            });
-    
-            
-            $(document).keydown(function (e) {
       
-              current_width_p1 = $('.player1').width();
-              current_width_p2 = $('.player2').width();
-      
-              if (current_width_p1 <= 2) {
-                $('h1').text(player_2 + ' Won!');
               }
-              else if (current_width_p2 <= 2) {
-                $('h1').text(player_1 + ' Won!');
-              }
-      
-              else {
-      
-                if (e.code == 'KeyD') {
-        
-                  current_width_p1+=10;
-                  current_width_p2-=10;
-                            
-                  $('.player1').css('width', current_width_p1);
-                  $('.player2').css('width', current_width_p2);
-        
-                }
-        
-                else if (e.code == 'KeyH') {
-        
-                  current_width_p2+=10;
-                  current_width_p1-=10;
-        
-                  $('.player2').css('width', current_width_p2);
-                  $('.player1').css('width', current_width_p1);
-        
-                }
-              }
-            });
-          }
+            }
+          });
         }
-
-        
-      });
+      }
+      
 
 
     });
@@ -131,7 +138,7 @@
   <link rel="stylesheet" href="index.css">
   <title>Game</title>
 </head>
-<body>
+<body onresize="checkResize();">
 
   <h1>Start</h1>
 
