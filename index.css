@@ -30,11 +30,18 @@ body {
 .player1 {
   width: 50%;
   background: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 
 .player2 {
   width: 50%;
   background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h3 {
