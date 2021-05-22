@@ -45,11 +45,6 @@ hr {
   padding-top: 5px;
 }
 
-.player_names h3 code div {
-  border-bottom: dashed 2px #950740;
-}
-
-
 .player1 {
   width: 50%;
   background: #222629;
