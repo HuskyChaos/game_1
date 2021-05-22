@@ -6,7 +6,7 @@ function checkResize() {
   if ( innerWidth < innerHeight || innerWidth < 400 ) {
 
     alert("Not Ready For Mobile Yet!");
-    open(location, '_self').close();
+    close();
 
   }
 }
@@ -16,7 +16,7 @@ $(document).ready(function () {
   if ( innerWidth < innerHeight || innerWidth < 400 ) {
     
     alert("Not Ready For Mobile Yet!");
-    open(location, '_self').close();
+    close();
 
   }
 
