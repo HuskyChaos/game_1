@@ -1,25 +1,22 @@
 function checkResize() {
 
-  if ( $(document).innerWidth() < $(document).innerHeight() ) {
-    alert("Rotate Your Mobile Screen To Play This Game!");
-    location.reload();
+  // if ( $(document).innerWidth() < $(document).innerHeight() ) {
+  //   alert("Rotate Your Mobile Screen To Play This Game!");
+  //   location.reload();
+  // }
+
+  if ( innerWidth < innerHeight || innerWidth < 400 ) {
+    alert("Not Ready For Mobile Yet!");
+    close();
   }
 }
 
 $(document).ready(function () {
 
-  if (innerHeight < 500) {
-    $('#device').text('Tap On Your Color To Play...');
-  }
 
-  else {
-    $('#device').text('press S for left & K for right');
-  }
-
-
-  if ( $(document).innerWidth() < $(document).innerHeight() ) {
-    alert("Rotate Your Mobile Screen To Play This Game!");
-    location.reload();
+  if ( innerWidth < innerHeight || innerWidth < 400 ) {
+    alert("Not Ready For Mobile Yet!");
+    close();
   }
 
   else {
