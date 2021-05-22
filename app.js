@@ -46,9 +46,9 @@ $(document).ready(function () {
     else {
 
       
-      $('.p1name').append(player_1);
+      $('.p1name').append(player_1.toUpperCase());
       $('#score_p1').append(score_p1);
-      $('.p2name').append(player_2);
+      $('.p2name').append(player_2.toUpperCase());
       $('#score_p2').append(score_p2);
 
       let will_increase = true;
