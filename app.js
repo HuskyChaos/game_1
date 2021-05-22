@@ -72,6 +72,13 @@ $(document).ready(function () {
 
       $('.player1').click(function () {
 
+        var el = $('.player1');
+
+        el.addEventListener('long-press', function(e) {
+          e.preventDefault()
+          console.log(e.target);
+        });
+
         current_width_p1 = $('.player1').width();
         current_width_p2 = $('.player2').width();
 
@@ -92,6 +99,13 @@ $(document).ready(function () {
       });
 
       $('.player2').click(function () {
+
+        var el = $('.player1');
+        
+        el.addEventListener('long-press', function(e) {
+          e.preventDefault()
+          console.log(e.target);
+        });
 
         current_width_p1 = $('.player1').width();
         current_width_p2 = $('.player2').width();
