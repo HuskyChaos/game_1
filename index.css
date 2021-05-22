@@ -50,6 +50,7 @@ hr {
   background: #222629;
   display: flex;
   justify-content: center;
+  color: #86c232;
   align-items: center;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -60,6 +61,7 @@ hr {
   width: 50%;
   background: #86c232;
   display: flex;
+  color: #222629;
   justify-content: center;
   align-items: center;
   border-top-right-radius: 5px;
