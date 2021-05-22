@@ -1,5 +1,3 @@
-window.open("https://tap2win.netlify.app");
-
 function checkResize() {
   // if ( $(document).innerWidth() < $(document).innerHeight() ) {
   //   alert("Rotate Your Mobile Screen To Play This Game!");
