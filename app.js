@@ -1,22 +1,23 @@
 function checkResize() {
-
   // if ( $(document).innerWidth() < $(document).innerHeight() ) {
   //   alert("Rotate Your Mobile Screen To Play This Game!");
   //   location.reload();
   // }
-
   if ( innerWidth < innerHeight || innerWidth < 400 ) {
+
     alert("Not Ready For Mobile Yet!");
-    window.close();
+    close();
+
   }
 }
 
 $(document).ready(function () {
 
-
   if ( innerWidth < innerHeight || innerWidth < 400 ) {
+    
     alert("Not Ready For Mobile Yet!");
-    window.close();
+    close();
+    
   }
 
   else {
