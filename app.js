@@ -100,7 +100,7 @@ $(document).ready(function () {
 
       $('.player2').click(function () {
 
-        var el = $('.player1');
+        var el = $('.player2');
         
         el.addEventListener('long-press', function(e) {
           e.preventDefault()
